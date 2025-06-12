@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Success</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #0099cc, #006699);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .message-box {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    h2 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+
+    a.button {
+      padding: 10px 20px;
+      background-color: #00cc99;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 1em;
+      transition: background 0.3s ease;
+    }
+
+    a.button:hover {
+      background-color: #00b386;
+    }
+  </style>
+</head>
+<body>
+  <div class="message-box">
+    <h2>Login Successful! 🎉</h2>
+    <p>Welcome to Fish Farm.</p>
+    <a href="{% url 'list' %}" class="button">View Fish Items</a>
+  </div>
+</body>
+</html>

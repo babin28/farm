@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aquarium Login</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #0099cc, #006699);
+      height: 100vh;
+      overflow: hidden;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .fish {
+      position: absolute;
+      height: 40px;
+      background: url('https://cdn.pixabay.com/photo/2013/07/12/12/58/fish-146956_1280.png') no-repeat center;
+      background-size: contain;
+      animation: swim 12s linear infinite;
+    }
+
+    .fish:nth-child(1) {
+      top: 20%;
+      left: -100px;
+      width: 80px;
+      animation-delay: 0s;
+    }
+
+    .fish:nth-child(2) {
+      top: 40%;
+      left: -100px;
+      width: 60px;
+      animation-delay: 4s;
+    }
+
+    .fish:nth-child(3) {
+      top: 60%;
+      left: -100px;
+      width: 100px;
+      animation-delay: 8s;
+    }
+
+    @keyframes swim {
+      from {
+        left: -100px;
+        transform: scaleX(1);
+      }
+
+      to {
+        left: 110%;
+        transform: scaleX(1);
+      }
+    }
+
+    .login-box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      width: 90%;
+      max-width: 350px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .login-box h2 {
+      margin-bottom: 20px;
+      color: #006699;
+      font-size: 1.8em;
+    }
+
+    .login-box input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 10px;
+      box-shadow: inset 0 0 5px #aaa;
+      font-size: 1em;
+    }
+
+    .login-box button {
+      padding: 12px;
+      width: 100%;
+      background: #006699;
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+      font-size: 1em;
+    }
+
+    .login-box button:hover {
+      background: #004d66;
+    }
+
+    @media screen and (max-width: 480px) {
+      .login-box {
+        padding: 20px;
+      }
+
+      .login-box h2 {
+        font-size: 1.5em;
+      }
+
+      .login-box input,
+      .login-box button {
+        font-size: 0.95em;
+        padding: 10px;
+      }
+
+      .fish {
+        height: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Animated Fish Background -->
+  <div class="fish"></div>
+  <div class="fish"></div>
+  <div class="fish"></div>
+
+  <!-- Login Form -->
+  <div class="login-box">
+    <h2>Fish Farm</h2>
+    <form method="POST">
+  {% csrf_token %}
+  <input type="text" name="username" placeholder="Username" required />
+  <input type="text" name="phone" placeholder="Phone Number" required />
+  <button type="submit">Login</button>
+</form>
+  </div>
+
+</body>
+
+</html>
