@@ -8,6 +8,7 @@ def homepage1(request):
 
 def homepage2(request):
     # rename this function and its template to index
+    # create this function to get the list of fishes from FishModel
     """Index page -> shows availabe products."""
     return render(request, 'list.html')
 
