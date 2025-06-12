@@ -10,3 +10,5 @@ class LoginEntry(models.Model):
         return f"{self.username} ({self.phone})"
 
       
+# class FishModel
+"""DB for fish -> fish_name, fish_description, fish_type, fish_size, price, fish_image1, fish_image2, fish_image3, is_active"""
